@@ -1,0 +1,93 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+}
+
+/* Sudoku board styling */
+.sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 1px;
+    padding: 10px;
+    background: #000;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #222, #333);
+    color: #0f0;
+    border: 1px solid #444;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+    box-shadow: 0 0 5px #0f0;
+}
+
+/* Styling for 3x3 sub-grid separators */
+.cell:nth-child(3n) {
+    border-right: 2px solid #0f0;
+}
+
+.cell:nth-child(9n) {
+    border-right: 1px solid #6908b3;
+}
+
+.sudoku-board > :nth-child(n+19):nth-child(-n+27),
+.sudoku-board > :nth-child(n+46):nth-child(-n+54) {
+    border-bottom: 2px solid #0f0;
+}
+
+/* Buttons and controls styling */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #007700, #00aa00);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #008800, #00bb00);
+    box-shadow: 0 0 10px #0f0;
+}
+.readonly {
+    background-color: #852626; /* Grey background to indicate readonly */
+    pointer-events: none;      /* Disable clicking (no interaction) */
+    color: white;               /* Make the text color darker */
+}
+
+#time{
+    height: 100px;
+    width: 100px;
+  background-color: red;
+    position: relative;
+    display: inline;
+
+
+}
